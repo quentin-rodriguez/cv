@@ -1,7 +1,7 @@
 
 # CV
 
-A brief description of what this project does and who it's for
+My CV
 
 
 ## Environment Variables
@@ -21,10 +21,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Run Locally
 
-Intall rtx or asdf
-```bash
-
-```
+Intall [rtx](https://github.com/jdx/rtx#installation) or [asdf](https://asdf-vm.com/guide/getting-started.html)
 
 Clone the project
 ```bash
@@ -39,6 +36,20 @@ cd cv
 Install tools
 ```bash
 rtx install
+# or
+asdf install
+```
+
+Install plugin
+```bash
+rtx plugins install texlive https://github.com/diSimplex/asdf-texlive.git
+# or
+asdf plugin add texlive https://github.com/diSimplex/asdf-texlive.git
+```
+
+Create a `.envrc` file and fill it with the [environment variables](#environment-variables) above
+```bash
+touch .envrc
 ```
 
 Install dependencies
