@@ -1,0 +1,38 @@
+\documentclass[11pt,a4paper]{awesome-cv/awesome-cv}
+
+\usepackage{catchfile}
+
+\newcommand{\getenv}[2][]{
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
+\getenv[\FIRSTNAME]{FIRSTNAME}
+\getenv[\LASTNAME]{LASTNAME}
+\getenv[\EMAIL]{EMAIL}
+\getenv[\ADDRESS]{ADDRESS}
+\getenv[\MOBILE]{MOBILE}
+\getenv[\LINKEDIN]{LINKEDIN}
+% \getenv[\GITHUB]{GITHUB}
+\getenv[\GITLAB]{GITLAB}
+
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\colorlet{awesome}{awesome-skyblue}
+\setbool{acvSectionColorHighlight}{true}
+
+\name{\FIRSTNAME}{\LASTNAME}
+\mobile{\MOBILE}
+\email{\EMAIL}
+\address{\ADDRESS}
+
+\linkedin{\LINKEDIN}
+% \github{\GITHUB}
+\gitlab{\GITLAB}
+
+\begin{document}
+
+\makecvheader
+
+\input{sections/skills.tex}
+\input{sections/experiences.tex}
+
+\end{document}
