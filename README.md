@@ -63,7 +63,7 @@ tlmgr install fontawesome5
 tlmgr install roboto
 tlmgr install sourcesanspro
 tlmgr install tikzfill
-tlmgr install carchfile
+tlmgr install catchfile
 ```
 
 Generate the pdf
