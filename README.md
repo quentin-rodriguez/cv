@@ -17,7 +17,7 @@ To run this project, you will need to add the following environment variables to
 | `MOBILE`    | `string` | The mobile phone  |
 | `LINKEDIN`  | `string` | Linkedin username |
 | `GITLAB`    | `string` | Gitlab username   |
-| `GITHUB`    | `string` | Github usernmame  |
+| `GITHUB`    | `string` | Github username   |
 
 ## Run Locally
 
