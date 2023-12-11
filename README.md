@@ -66,7 +66,7 @@ tlmgr install tikzfill
 tlmgr install carchfile
 ```
 
-Create the pdf
+Generate the pdf
 ```bash
 xelatex cv.tex
 ```
