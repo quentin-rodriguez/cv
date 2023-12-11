@@ -33,6 +33,11 @@ Go to the project directory
 cd cv
 ```
 
+Clone submodule
+```bash
+git submodule update --init --recursive --remote
+```
+
 Install tools
 ```bash
 rtx install
