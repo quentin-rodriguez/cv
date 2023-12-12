@@ -38,6 +38,15 @@ Clone submodule
 git submodule update --init --recursive --remote
 ```
 
+Install plugins
+```bash
+rtx plugins install texlive https://github.com/diSimplex/asdf-texlive.git
+rtx plugins intall just https://github.com/olofvndrhr/asdf-just.git
+# or
+asdf plugin add texlive https://github.com/diSimplex/asdf-texlive.git
+asdf plugin add just https://github.com/olofvndrhr/asdf-just.git
+```
+
 Install tools
 ```bash
 rtx install
@@ -45,16 +54,9 @@ rtx install
 asdf install
 ```
 
-Install plugin
+Create a `.env` file and fill it with the [environment variables](#environment-variables) above
 ```bash
-rtx plugins install texlive https://github.com/diSimplex/asdf-texlive.git
-# or
-asdf plugin add texlive https://github.com/diSimplex/asdf-texlive.git
-```
-
-Create a `.envrc` file and fill it with the [environment variables](#environment-variables) above
-```bash
-touch .envrc
+touch .env
 ```
 
 Install dependencies
@@ -68,6 +70,8 @@ tlmgr install catchfile
 
 Generate the pdf
 ```bash
-xelatex cv.tex
+just docker-build
+# or
+just build
 ```
 
