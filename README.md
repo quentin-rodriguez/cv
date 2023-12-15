@@ -19,7 +19,7 @@ To run this project, you will need to add the following environment variables to
 | `GITLAB`    | `string` | Gitlab username   |
 | `GITHUB`    | `string` | Github username   |
 
-## Run Locally
+## Build Locally
 
 Intall [rtx](https://github.com/jdx/rtx#installation) or [asdf](https://asdf-vm.com/guide/getting-started.html)
 
@@ -54,9 +54,10 @@ rtx install
 asdf install
 ```
 
-Create a `.env` file and fill it with the [environment variables](#environment-variables) above
+Create a `.envrc` file and fill it with the [environment variables](#environment-variables) above
 ```bash
-touch .env
+touch .envrc
+direnv allow
 ```
 
 Install dependencies
@@ -66,12 +67,17 @@ tlmgr install roboto
 tlmgr install sourcesanspro
 tlmgr install tikzfill
 tlmgr install catchfile
+tlmgr install babel-french
 ```
 
 Generate the pdf
 ```bash
-just docker-build
-# or
-just build
+xelatex cv.tex
 ```
 
+## Build with Docker
+
+Generate the pdf
+```bash
+docker run --rm -v ./:/opt/app -it $(docker build --build-arg "GROUP=$(id -u)" --build-arg "USER=$(id -u)" -t $(id -un)-cv -q .) xelatex cv.tex
+```

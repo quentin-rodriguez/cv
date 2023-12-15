@@ -3,7 +3,7 @@ FROM debian:bullseye-slim
 # Install tools
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update
-RUN apt install -y git bash perl build-essential texlive-full
+RUN apt install -y git bash direnv build-essential texlive-full
 RUN apt autoclean
 
 # Create system user

@@ -1,6 +1,9 @@
 \documentclass[11pt,a4paper]{awesome-cv/awesome-cv}
 
+\usepackage[T1]{fontenc}
+
 \usepackage{catchfile}
+\usepackage[french]{babel}
 
 \newcommand{\getenv}[2][]{
   \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}
@@ -30,10 +33,13 @@
 
 \begin{document}
 
-  \makecvheader{}
-
+  \makecvheader
   \input{sections/skills.tex}
   \input{sections/experiences.tex}
   \input{sections/educations.tex}
+  \makecvfooter
+    {\today}
+    {\FIRSTNAME\ \LASTNAME}
+    {\thepage}
 
 \end{document}

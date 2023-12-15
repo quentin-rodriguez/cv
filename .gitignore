@@ -5,8 +5,6 @@
 ### direnv ###
 .direnv
 .envrc
-.env
-.env.*
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
