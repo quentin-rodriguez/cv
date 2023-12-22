@@ -77,7 +77,12 @@ xelatex cv.tex
 
 ## Build with Docker
 
+Build the image
+```bash
+docker build --build-arg "GROUP=$(id -u)" --build-arg "USER=$(id -u)" -t $(id -un)-cv -q .
+```
+
 Generate the pdf
 ```bash
-docker run --rm -v ./:/opt/app -it $(docker build --build-arg "GROUP=$(id -u)" --build-arg "USER=$(id -u)" -t $(id -un)-cv -q .) xelatex cv.tex
+docker run --rm -v ./:/opt/app -it $(id -un)-cv xelatex cv.tex
 ```
