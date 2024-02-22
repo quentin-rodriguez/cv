@@ -21,7 +21,7 @@ To run this project, you will need to add the following environment variables to
 
 ## Build Locally
 
-Intall [rtx](https://github.com/jdx/rtx#installation) or [asdf](https://asdf-vm.com/guide/getting-started.html)
+Install [mise](https://mise.jdx.dev/getting-started.html)
 
 Clone the project
 ```bash
@@ -38,7 +38,7 @@ Clone submodule
 git submodule update --init --recursive --remote
 ```
 
-Install [mise](https://mise.jdx.dev/getting-started.html) to manage your plugins and tools
+Install plugins and tools
 ```bash
 mise install
 ```
