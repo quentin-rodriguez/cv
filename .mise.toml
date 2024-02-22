@@ -1,0 +1,11 @@
+[tools]
+texlive = "2023"
+
+[plugins]
+texlive = "https://github.com/diSimplex/asdf-texlive.git"
+
+[settings]
+jobs = 4
+env_file = ".env.local"
+verbose = false
+asdf_compat = true

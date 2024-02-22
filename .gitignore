@@ -2,9 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=direnv,latex
 *.pdf
 
-### direnv ###
-.direnv
-.envrc
+### Mise ###
+.env.local
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:

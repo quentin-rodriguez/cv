@@ -6,7 +6,7 @@ My CV
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your `.envrc` file
+To run this project, you will need to add the following environment variables to your `.env.local` file
 
 | Name        | Type     | Description       |
 | ----------- | -------- | ----------------- |
@@ -38,26 +38,14 @@ Clone submodule
 git submodule update --init --recursive --remote
 ```
 
-Install plugins
+Install [mise](https://mise.jdx.dev/getting-started.html) to manage your plugins and tools
 ```bash
-rtx plugins install texlive https://github.com/diSimplex/asdf-texlive.git
-rtx plugins intall just https://github.com/olofvndrhr/asdf-just.git
-# or
-asdf plugin add texlive https://github.com/diSimplex/asdf-texlive.git
-asdf plugin add just https://github.com/olofvndrhr/asdf-just.git
+mise install
 ```
 
-Install tools
+Create a `.env.local` file and fill it with the [environment variables](#environment-variables) above
 ```bash
-rtx install
-# or
-asdf install
-```
-
-Create a `.envrc` file and fill it with the [environment variables](#environment-variables) above
-```bash
-touch .envrc
-direnv allow
+touch .env.local
 ```
 
 Install dependencies
@@ -84,5 +72,5 @@ docker build --build-arg "GROUP=$(id -g)" --build-arg "USER=$(id -u)" -t $(id -u
 
 Generate the pdf
 ```bash
-docker run --rm -v ./:/opt/app -it $(id -un)-cv xelatex cv.tex
+docker run --rm --env-file .env.local -v ./:/opt/app -it $(id -un)-cv xelatex cv.tex
 ```
