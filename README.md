@@ -1,8 +1,7 @@
 
 # CV
 
-Build my own CV to avoid losing it.<br>
-Build [locally](#build-locally) or with a [docker](#build-with-docker)
+My CV, build [locally](#build-locally) or with a [docker](#build-with-docker)
 
 ## Environment Variables
 
