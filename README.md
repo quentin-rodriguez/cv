@@ -1,7 +1,8 @@
 
-# CV
+# My CV
 
-My CV, build [locally](#build-locally) or with a [docker](#build-with-docker)
+Build [locally](#build-locally) or with a [docker](#build-with-docker).<br>
+Template used is [Awesome-CV](https://github.com/posquit0/Awesome-CV).
 
 ## Environment Variables
 
