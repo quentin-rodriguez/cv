@@ -1,23 +1,22 @@
 
 # My CV
 
-Build [locally](#build-locally) or with a [docker](#build-with-docker).<br>
 Template used is [Awesome-CV](https://github.com/posquit0/Awesome-CV).
 
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your `.env.local` file
 
-| Name        | Type     | Description       |
-| ----------- | -------- | ----------------- |
-| `FIRSTNAME` | `string` | The firstname     |
-| `LASTNAME`  | `string` | The lastname      |
-| `EMAIL`     | `string` | The email         |
-| `ADDRESS`   | `string` | The address       |
-| `MOBILE`    | `string` | The mobile phone  |
-| `LINKEDIN`  | `string` | Linkedin username |
-| `GITLAB`    | `string` | Gitlab username   |
-| `GITHUB`    | `string` | Github username   |
+| Name        | Description       |
+| ----------- | ----------------- |
+| `FIRSTNAME` | The firstname     |
+| `LASTNAME`  | The lastname      |
+| `EMAIL`     | The email         |
+| `ADDRESS`   | The address       |
+| `MOBILE`    | The mobile phone  |
+| `LINKEDIN`  | Linkedin username |
+| `GITLAB`    | Gitlab username   |
+| `GITHUB`    | Github username   |
 
 ## Build Locally
 

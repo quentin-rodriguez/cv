@@ -2,8 +2,8 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=direnv,latex
 *.pdf
 
-### Mise ###
-.env.local
+## Build directory
+_build/*
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:

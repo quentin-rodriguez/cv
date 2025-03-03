@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{awesome-cv/awesome-cv}
+\documentclass[11pt,a4paper]{awesome-cv}
 
 \usepackage[T1]{fontenc}
 
@@ -16,7 +16,6 @@
 \getenv[\MOBILE]{MOBILE}
 \getenv[\LINKEDIN]{LINKEDIN}
 \getenv[\GITHUB]{GITHUB}
-\getenv[\GITLAB]{GITLAB}
 
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 \colorlet{awesome}{awesome-skyblue}
@@ -29,17 +28,18 @@
 
 \linkedin{\LINKEDIN}
 \github{\GITHUB}
-\gitlab{\GITLAB}
 
 \begin{document}
 
-  \makecvheader
-  \input{sections/skills.tex}
-  \input{sections/experiences.tex}
-  \input{sections/educations.tex}
-  \makecvfooter
-    {\today}
-    {\FIRSTNAME\ \LASTNAME}
-    {\thepage}
+\makecvheader
+
+\makecvfooter
+  {\today}
+  {\FIRSTNAME\ \LASTNAME}
+  {\thepage}
+
+\input{sections/skills.tex}
+\input{sections/experiences.tex}
+\input{sections/educations.tex}
 
 \end{document}
