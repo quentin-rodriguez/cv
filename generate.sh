@@ -1,8 +1,7 @@
 #!/bin/sh
 
 COMMAND_NOT_FOUND=127
-GIT_HTTPS_URL="https://github.com/quentin-rodriguez/cv.git"
-CLONE_DEFAULT_PATH="$HOME/cv"
+GIT_URL="https://github.com/quentin-rodriguez/cv.git"
 
 missing_pkgs() {
     for pkg in $@; do
@@ -13,22 +12,9 @@ missing_pkgs() {
     done
 }
 
-clone() {
-    url=$1
-    path=$2
-
-    if [ ! -d "$path" ]; then
-        git clone $url $path
-    fi
-
-    cd $path
-    git submodule update --init --recursive --remote
-}
-
-
 missing_pkgs "git" "docker"
 
-read -e -p "Clone path: " -i "$CLONE_DEFAULT_PATH" CLONE_PATH
+read -e -p "Clone path: " -i "$PWD/my_cv" CLONE_PATH
 read -e -p "Firstname: " -i "John" FIRSTNAME
 read -e -p "Lastname: " -i "Doe" LASTNAME
 read -e -p "Email: " -i "john.doe@example.com" EMAIL
@@ -37,9 +23,9 @@ read -e -p "Mobile: " -i "+3311223344" MOBILE
 read -e -p "Linkedin: " -i "john.doe" LINKEDIN
 read -e -p "Github: " -i "john.doe" GITHUB
 
-clone "$GIT_HTTPS_URL" "$CLONE_PATH"
-
-echo $CLONE_PATH
+if [ ! -d "$path" ]; then
+    git clone $GIT_URL $CLONE_PATH
+fi
 
 docker run \
     --rm \
@@ -54,5 +40,3 @@ docker run \
     --env "LINKEDIN=$LINKEDIN" \
     --env "GITHUB=$GITHUB" \
     thomasweise/docker-texlive-full make
-
-
