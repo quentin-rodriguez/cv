@@ -3,16 +3,16 @@
 COMMAND_NOT_FOUND=127
 GIT_URL="https://github.com/quentin-rodriguez/cv.git"
 
-missing_pkgs() {
+missing_commands() {
     for pkg in $@; do
         if [ -z "$(command -v $pkg)" ]; then
-            echo "Missing: $pkg"
+            echo "The command is missing \"$pkg\""
             exit $COMMAND_NOT_FOUND
         fi
     done
 }
 
-missing_pkgs "git" "docker"
+missing_commands "git" "docker"
 
 read -e -p "Clone path: " -i "$PWD/my_cv" CLONE_PATH
 read -e -p "Firstname: " -i "John" FIRSTNAME
@@ -23,7 +23,7 @@ read -e -p "Mobile: " -i "+3311223344" MOBILE
 read -e -p "Linkedin: " -i "john.doe" LINKEDIN
 read -e -p "Github: " -i "john.doe" GITHUB
 
-if [ ! -d "$path" ]; then
+if [ ! -d "$CLONE_PATH" ]; then
     git clone $GIT_URL $CLONE_PATH
 fi
 
@@ -36,7 +36,26 @@ docker run \
     --env "FIRSTNAME=$FIRSTNAME" \
     --env "LASTNAME=$LASTNAME" \
     --env "EMAIL=$EMAIL" \
+    --env "ADDRESS=$ADDRESS" \
     --env "MOBILE=$MOBILE" \
     --env "LINKEDIN=$LINKEDIN" \
     --env "GITHUB=$GITHUB" \
     thomasweise/docker-texlive-full make
+
+cat <<-EOF
+
+====================================================================================
+
+To open the file "$CLONE_PATH/_build/cv/cv.pdf"
+
+Use one of the following commands:
+
+    xdg-open $CLONE_PATH/_build/cv/cv.pdf
+
+    or
+
+    open $CLONE_PATH/_build/cv/cv.pdf
+
+===================================================================================
+
+EOF

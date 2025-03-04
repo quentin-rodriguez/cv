@@ -1,11 +1,9 @@
 
-# My CV
+# CV
 
 Template used is [Awesome-CV](https://github.com/posquit0/Awesome-CV).
 
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your `.env.local` file
+## 💡 Environment Variables
 
 | Name        | Description       |
 | ----------- | ----------------- |
@@ -18,58 +16,23 @@ To run this project, you will need to add the following environment variables to
 | `GITLAB`    | Gitlab username   |
 | `GITHUB`    | Github username   |
 
-## Build Locally
+## ⚡ Build
 
-1. Install [mise](https://mise.jdx.dev/getting-started.html)
+1. Run the script below
 
-2. Clone the project
-```bash
-git clone git@gitlab.com:q.rodriguez/cv.git
+```sh
+sh <(curl https://raw.githubusercontent.com/quentin-rodriguez/cv/refs/heads/master/generate)
 ```
 
-3. Go to the project directory
-```bash
-cd cv
-```
+2. Enter the information requested by the script run above
 
-4. Clone submodule
-```bash
-git submodule update --init --recursive --remote
-```
-
-5. Install plugins and tools
-```bash
-mise install
-```
-
-6. Create a `.env.local` file and fill it with the [environment variables](#environment-variables) above
-```bash
-touch .env.local
-```
-
-7. Install dependencies
-```bash
-tlmgr install fontawesome5
-tlmgr install roboto
-tlmgr install sourcesanspro
-tlmgr install tikzfill
-tlmgr install catchfile
-tlmgr install babel-french
-```
-
-8. Generate the pdf
-```bash
-xelatex cv.tex
-```
-
-## Build with Docker
-
-1. Build the image
-```bash
-docker build --build-arg "GROUP=$(id -g)" --build-arg "USER=$(id -u)" -t $(id -un)-cv -q .
-```
-
-2. Generate the pdf
-```bash
-docker run --rm --env-file .env.local -v ./:/opt/app -it $(id -un)-cv xelatex cv.tex
+```sh
+Clone path: /home/user/cv
+Firstname: John
+Lastname: Doe
+Email: john.doe@example.com
+Address: 1825 rue Issou, 69000 Delachancla
+Mobile: +3311223344
+Linkedin: john.doe
+Github: john.doe
 ```
